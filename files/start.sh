@@ -32,7 +32,7 @@ if [ ! -f /var/www/html/sites/default/settings.php ]; then
 	cp sites/default/default.services.yml sites/default/services.yml
 	${DRUSH} site-install standard -y --account-name=admin --account-pass=admin \
   --db-url="mysqli://drupal:${DRUPAL_PASSWORD}@localhost:3306/drupal" \
-  --site-name="Drupal8 docker App" | grep -v 'continue?'
+  --site-name="Drupal7 docker App" | grep -v 'continue?'
 	${DRUSH} -y dl memcache | grep -v 'continue?'
 	${DRUSH} -y en memcache | grep -v 'continue?'
 	killall mysqld
