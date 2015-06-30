@@ -1,4 +1,4 @@
-drupal8-docker-app
+drupal7-docker-app
 ==================
 
 This repo contains a recipe for making a Docker container running Drupal8, using Linux, Apache, MySQL, Memcache and SSH.
@@ -11,7 +11,7 @@ https://docs.docker.com/installation/
 
 ## 2 - Get the image and run it using port 80:
 ```
-sudo docker run -i -t -p 80:80 ricardoamaro/drupal8
+sudo docker run -i -t -p 80:80 ricardoamaro/drupal7
 ```
 That's it!
 ## 3 - Visit [http://localhost/](http://localhost/) in your browser
@@ -31,13 +31,13 @@ sudo docker start -i -a (container ID)
 
 ## You can also clone this repo somewhere and build it,
 ```
-git clone https://github.com/ricardoamaro/drupal8-docker-app.git
-cd drupal8-docker-app
-sudo docker build -t <yourname>/drupal8 .
+git clone https://github.com/ricardoamaro/drupal7-docker-app.git
+cd drupal7-docker-app
+sudo docker build -t <yourname>/drupal7 .
 ```
 ## Or build it directly from github,
 ```
-sudo docker build -t ricardo/drupal8 https://github.com/ricardoamaro/drupal8-docker-app.git
+sudo docker build -t ricardo/drupal7 https://github.com/ricardoamaro/drupal7-docker-app.git
 ```
 
 Note1: you cannot have port 80 already used or the container will not start.
@@ -45,7 +45,7 @@ In that case you can start by setting: `-p 8080:80`
 
 Note2: To run the container in the background
 ```
-sudo docker run -d -t -p 80:80 <yourname>/drupal8
+sudo docker run -d -t -p 80:80 <yourname>/drupal7
 ```
 
 ## More docker awesomeness
@@ -54,7 +54,7 @@ This will create an ID that you can start/stop/commit changes:
 ```
 # sudo docker ps
 ID                  IMAGE                   COMMAND               CREATED             STATUS              PORTS
-538example20        <yourname>/drupal8:latest   /bin/bash /start.sh   3 minutes ago       Up 6 seconds        80->80
+538example20        <yourname>/drupal7:latest   /bin/bash /start.sh   3 minutes ago       Up 6 seconds        80->80
 ```
 
 Start/Stop
@@ -65,17 +65,17 @@ sudo docker start 538example20
 
 Commit the actual state to the image
 ```
-sudo docker commit 538example20 <yourname>/drupal8
+sudo docker commit 538example20 <yourname>/drupal7
 ```
 
 Starting again with the commited changes
 ```
-sudo docker run -d -t -p 80:80 <yourname>/drupal8 /start.sh
+sudo docker run -d -t -p 80:80 <yourname>/drupal7 /start.sh
 ```
 
 Shipping the container image elsewhere
 ```
-sudo docker push  <yourname>/drupal8
+sudo docker push  <yourname>/drupal7
 ```
 
 You can find more images using the [Docker Index][docker_index].

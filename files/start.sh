@@ -47,7 +47,7 @@ echo
 echo "--------------------------STARTING SERVICES-----------------------------------"
 echo "SSH    LOGIN: ssh root@${LOCAL_IP} with root  password: ${ROOT_PASSWORD}"
 echo "DRUPAL LOGIN: http://${LOCAL_IP}   with admin password: admin"
-echo "Please report any issues to https://github.com/ricardoamaro/drupal8-docker-app"
+echo "Please report any issues to https://github.com/ricardoamaro/drupal7-docker-app"
 echo "USE CTRL+C TO STOP THIS APP"
 echo "------------------------------------------------------------------------------"
 supervisord -n -c /etc/supervisor/conf.d/supervisord.conf

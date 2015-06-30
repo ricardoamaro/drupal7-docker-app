@@ -47,7 +47,7 @@ RUN composer --version
 RUN /.composer/vendor/drush/drush/drush --version
 
 # Retrieve drupal
-RUN rm -rf /var/www/html ; cd /var/www ; /.composer/vendor/drush/drush/drush -v dl drupal --default-major=8 --drupal-project-rename="html"
+RUN rm -rf /var/www/html ; cd /var/www ; /.composer/vendor/drush/drush/drush -v dl drupal --default-major=7 --drupal-project-rename="html"
 RUN chmod a+w /var/www/html/sites/default ; mkdir /var/www/html/sites/default/files ; chown -R www-data:www-data /var/www/html/
 
 RUN chmod 755 /start.sh /etc/apache2/foreground.sh
