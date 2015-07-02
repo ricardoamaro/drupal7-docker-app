@@ -29,7 +29,6 @@ if [ ! -f /var/www/html/sites/default/settings.php ]; then
 	mysqladmin -u root password $ROOT_PASSWORD
 	mysql -uroot -p$ROOT_PASSWORD -e "CREATE DATABASE drupal; GRANT ALL PRIVILEGES ON drupal.* TO 'drupal'@'localhost' IDENTIFIED BY '$DRUPAL_PASSWORD'; FLUSH PRIVILEGES;"
 	cd /var/www/html
-	cp sites/default/default.services.yml sites/default/services.yml
 	${DRUSH} site-install standard -y --account-name=admin --account-pass=admin \
   --db-url="mysqli://drupal:${DRUPAL_PASSWORD}@localhost:3306/drupal" \
   --site-name="Drupal7 docker App" | grep -v 'continue?'
