@@ -30,7 +30,7 @@ RUN echo "export VISIBLE=now" >> /etc/profile
 
 # Install Composer & Drush
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-RUN HOME=/ /usr/local/bin/composer global require drush/drush:dev-master
+RUN HOME=/ /usr/local/bin/composer global require drush/drush:~8
 
 # Install supervisor
 COPY ./files/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
